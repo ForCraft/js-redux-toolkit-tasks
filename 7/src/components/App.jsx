@@ -24,13 +24,13 @@ const App = () => {
         comments,
       } = normalizedData.entities;
 
-      dispatch(usersActions.addUsers(users));
-      dispatch(postsActions.addPosts(posts));
-      dispatch(commentsActions.addComments(comments));
+      dispatch(usersActions.addUsers(Object.values(users)));
+      dispatch(postsActions.addPosts(Object.values(posts)));
+      dispatch(commentsActions.addComments(Object.values(comments)));
     };
 
     fetchData();
-  });
+  }, [dispatch]);
 
   return (
     <>

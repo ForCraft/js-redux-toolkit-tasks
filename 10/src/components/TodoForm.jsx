@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
-import cn from 'classnames';
 
 const TodoForm = ({ submitHandler }) => {
   const [newTaskText, setNewTaskText] = useState('');
   const handleChangeText = (event) => setNewTaskText(event.target.value);
 
-  const inputClassName = cn({
-    'form-control': true,
-    'me-3': true,
-  });
+  const inputClassName = 'form-control me-3';
 
   const onSubmit = (event) => {
     submitHandler(event, newTaskText);

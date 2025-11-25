@@ -29,7 +29,7 @@ const App = () => {
     };
 
     fetchData();
-  });
+  }, [dispatch]);
 
   return (
     <div className="col-5">

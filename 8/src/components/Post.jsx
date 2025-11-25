@@ -10,6 +10,10 @@ const Post = ({ post }) => {
   const author = useSelector((state) => selectors.selectById(state, post.author));
   const dispatch = useDispatch();
 
+  if (!author) {
+    return null;
+  }
+
   const addComment = (comment) => {
     dispatch(postsActions.updatePost({
       id: post.id,

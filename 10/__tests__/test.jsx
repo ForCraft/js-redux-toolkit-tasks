@@ -7,11 +7,17 @@ import userEvent from '@testing-library/user-event';
 import 'whatwg-fetch';
 import nock from 'nock';
 
-import uniqueId from 'lodash/uniqueId';
 import App from '../src/components/App.jsx';
 import store from '../src/services/index.js';
 
+let idCounter = 0;
+const uniqueId = () => {
+  idCounter += 1;
+  return idCounter.toString();
+};
+
 test('Work 1', async () => {
+  idCounter = 0;
   const newTaskText = 'na-na';
   const items = [
     { text: 'test1', id: uniqueId() },
